@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        // VARIABLE DEFINITIONS
-        // Init new scanner for user input
+        // init Scanner for user input
         Scanner user_input = new Scanner(System.in);
 
         // Introduction Screen
         displayHomeScreen();
+
+        // Init instance of UserInterface
+        UserInterface app = new UserInterface();
 
         // while loop - keep showing the user the options until they exit the program
         while (true) {
@@ -21,9 +23,11 @@ public class App {
                 switch(user_selection.toUpperCase()) {
                     case "D":
                         System.out.println("You would like to make a deposit");
+                        app.addDeposit();
                         break;
                     case "P":
                         System.out.println("You would like to make a payment");
+                        app.addPayment();
                         break;
                     case "L":
                         System.out.println("Here is the ledger to date:");

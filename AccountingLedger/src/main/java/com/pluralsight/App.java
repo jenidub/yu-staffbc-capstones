@@ -11,7 +11,8 @@ public class App {
         displayHomeScreen();
 
         // Init instance of UserInterface
-        UserInterface app = new UserInterface();
+        // UserInterface app = new UserInterface();
+        UserInterfaceBasic app = new UserInterfaceBasic();
 
         // while loop - keep showing the user the options until they exit the program
         while (true) {

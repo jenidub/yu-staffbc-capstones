@@ -1,18 +1,23 @@
 package com.pluralsight;
 
+import com.pluralsight.views.HomeView;
+
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
-        // init Scanner for user input
-        Scanner user_input = new Scanner(System.in);
+    // init Scanner for user input
+    static Scanner user_input = new Scanner(System.in);
 
+    // init HomeView for
+    static HomeView homeView = new HomeView();
+
+    public static void main(String[] args) {
         // Introduction Screen
         displayHomeScreen();
 
         // Init instance of UserInterface
         // UserInterface app = new UserInterface();
-        UserInterfaceBasic app = new UserInterfaceBasic();
+        // UserInterfaceBasic app = new UserInterfaceBasic();
 
         // while loop - keep showing the user the options until they exit the program
         while (true) {
@@ -24,11 +29,11 @@ public class App {
                 switch(user_selection.toUpperCase()) {
                     case "D":
                         System.out.println("You would like to make a deposit");
-                        app.addDeposit();
+                        homeView.addDeposit();
                         break;
                     case "P":
                         System.out.println("You would like to make a payment");
-                        app.addPayment();
+                        homeView.addPayment();
                         break;
                     case "L":
                         System.out.println("Here is the ledger to date:");

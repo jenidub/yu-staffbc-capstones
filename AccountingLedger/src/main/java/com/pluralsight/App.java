@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import com.pluralsight.views.HomeView;
+import com.pluralsight.views.LedgerView;
 
 import java.util.Scanner;
 
@@ -10,6 +11,7 @@ public class App {
 
     // init HomeView for
     static HomeView homeView = new HomeView();
+    static LedgerView ledgerView = new LedgerView();
 
     public static void main(String[] args) {
         // Introduction Screen
@@ -28,15 +30,13 @@ public class App {
             } else {
                 switch(user_selection.toUpperCase()) {
                     case "D":
-                        System.out.println("You would like to make a deposit");
                         homeView.addDeposit();
                         break;
                     case "P":
-                        System.out.println("You would like to make a payment");
                         homeView.addPayment();
                         break;
                     case "L":
-                        System.out.println("Here is the ledger to date:");
+                        ledgerView.ledgerMenu();
                         break;
                     default:
                         System.out.println("Invalid choice - please enter again");

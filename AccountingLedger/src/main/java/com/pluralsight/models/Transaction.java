@@ -1,4 +1,4 @@
-package org.example.models;
+package com.pluralsight.models;
 
 //4 Pillars of OOP (Object-Oriented Programming)
 //Inheritance - inherit from a parent class or another object
@@ -18,7 +18,7 @@ public class Transaction {
     private LocalTime time;
     private String description;
     private String vendor;
-    private int amount;
+    private double amount;
 
     //constructors
     //default constructor
@@ -26,7 +26,7 @@ public class Transaction {
     }
 
     //all args constructor
-    public Transaction(LocalDate date, LocalTime time, String description, String vendor, int amount) {
+    public Transaction (LocalDate date, LocalTime time, String description, String vendor, double amount) {
         this.date = date;
         this.time = time;
         this.description = description;
@@ -67,11 +67,11 @@ public class Transaction {
         this.vendor = vendor;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 }

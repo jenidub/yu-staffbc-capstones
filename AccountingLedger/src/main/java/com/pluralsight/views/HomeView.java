@@ -16,15 +16,11 @@ public class HomeView {
 
     // Class Methods
     public void addDeposit() {
-        // init Scanner for user input
-        // Scanner user_input = new Scanner(System.in);
-
         // init StringBuilder to match the entry format as the info comes in
         StringBuilder entry = new StringBuilder();
 
         // entry format: date|time|description|vendor|amount
         // deposit example: 2023-04-15|11:15:00|Invoice 1001 paid|Joe|1500.00\
-
         // use .now() for date and time with required format then append to entry variable
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String dateFormatted = LocalDate.now().format(dateFormat);

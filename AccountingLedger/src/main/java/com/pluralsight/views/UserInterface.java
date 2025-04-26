@@ -1,7 +1,5 @@
-package com.pluralsight;
+package com.pluralsight.views;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -14,7 +12,7 @@ public class UserInterface {
 
     public void addDeposit() {
         // init Scanner for user input
-        // Scanner user_input = new Scanner(System.in);
+        Scanner user_input = new Scanner(System.in);
 
         // init StringBuilder to match the entry format as the info comes in
         // StringBuilder entry = new StringBuilder();
@@ -23,17 +21,17 @@ public class UserInterface {
         // deposit example: 2023-04-15|11:15:00|Invoice 1001 paid|Joe|1500.00
 
         //        user enters description
-        //        System.out.println("Please write a short description of the deposit:    ");
-        //        String depositDescription = user_input.nextLine().trim();
-        //
+        System.out.println("Please write a short description of the deposit:    ");
+        String depositDescription = user_input.nextLine().trim();
+
         //        // user enter vendor
-        //        System.out.println("Who is the vendor associated with the deposit?    ");
-        //        String depositVendor = user_input.nextLine().trim();
-        //
+        System.out.println("Who is the vendor associated with the deposit?    ");
+        String depositVendor = user_input.nextLine().trim();
+
         //        // user enters amount - check that it's positive
-        //        System.out.println("What is the amount of the deposit? (example: ####.## - only positive values)   ");
-        //        String depositAmount = user_input.nextLine().trim();
-        //
+        System.out.println("What is the amount of the deposit? (example: ####.## - only positive values)   ");
+        String depositAmount = user_input.nextLine().trim();
+
         //        // Build string based on the variables above
         //        String entry = createEntry(depositDescription, depositVendor, depositAmount);
 
@@ -49,22 +47,22 @@ public class UserInterface {
 
     public void addPayment() {
         // init Scanner for user input
-        // Scanner user_input = new Scanner(System.in);
+         Scanner user_input = new Scanner(System.in);
 
         // entry format: date|time|description|vendor|amount
         // deposit example: 2023-04-15|10:13:25|ergonomic keyboard|Amazon|-89.50
 
-        //        // user enters description
-        //        System.out.println("Please write a short description of the payment:    ");
-        //        String paymentDescription = user_input.nextLine().trim();
-        //
-        //        // user enter vendor
-        //        System.out.println("Who is the vendor associated with the payment?    ");
-        //        String paymentVendor = user_input.nextLine().trim();
-        //
-        //        // user enters amount - check that it's positive
-        //        System.out.println("What is the amount of the payment? (example: -####.## - only negative values)   ");
-        //        String paymentAmount = user_input.nextLine().trim();
+        // user enters description
+        System.out.println("Please write a short description of the payment:    ");
+        String paymentDescription = user_input.nextLine().trim();
+
+        // user enter vendor
+        System.out.println("Who is the vendor associated with the payment?    ");
+        String paymentVendor = user_input.nextLine().trim();
+
+        // user enters amount - check that it's positive
+        System.out.println("What is the amount of the payment? (example: -####.## - only negative values)   ");
+        String paymentAmount = user_input.nextLine().trim();
 
         // Create the entry for a payment type
         String entry = createEntry("payment");

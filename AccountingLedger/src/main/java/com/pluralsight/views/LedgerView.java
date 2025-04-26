@@ -16,6 +16,9 @@ public class LedgerView {
     // Save all current transactions in ArrayList for access by reports
     ArrayList<Transaction> transactionHistory = new ArrayList<>();
 
+    // Init ReportView instance
+    ReportView reportView = new ReportView(transactionHistory);
+
     // Ledger Menu
     //    A) All - Display all entries
     //    o D) Deposits - Display only the entries that are deposits into the
@@ -40,14 +43,14 @@ public class LedgerView {
             System.out.println("[A]    Display All Transactions");
             System.out.println("[D]    Display All Deposits");
             System.out.println("[P]    Display All Payments");
-            System.out.println("[R]    See Reports");
+            System.out.println("[R]    See Reports Menu");
             System.out.println("[X]    Return to the Home Screen");
             System.out.println();
             System.out.println("Enter your selection now:    ");
             String optionSelection = ledgerScanner.nextLine();
 
             if (optionSelection.equalsIgnoreCase("X")) {
-                System.out.println("Exit the reports menu - back to the HomeView");
+                System.out.println("Leaving the Ledger menu - returning to the Home Screen");
                 ledgerRunning = false;
             } else {
                 switch (optionSelection.toUpperCase()) {
@@ -64,7 +67,8 @@ public class LedgerView {
                         showAllPayments(transactionHistory);
                         break;
                     case "R":
-                        System.out.println("View the reports menu");
+//                        System.out.println("View the reports menu");
+                        reportView.reportMenu(transactionHistory);
                         break;
                     default:
                         System.out.println("Invalid choice - please enter again");
